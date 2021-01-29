@@ -89,26 +89,26 @@ sectionA.appendChild(btntidur);
 
 
 // versi class
-// class Mahasiswa {
-//     constructor(nama, energi) {
-//         this.nama = nama;
-//         this.energi = energi;
-//     }
-//     makan(porsi) {
-//         this.energi += porsi;
-//         return `Halo ${this.nama}, selamat makan!`;
-//     }
-//     main(jam) {
-//         this.energi -= jam;
-//         return `Halo ${this.nama}, selamat bermain!`;
-//     }
-//     tidur(jam) {
-//         this.energi += jam * 2;
-//         return `Halo ${this.nama}, selamat tidur!`;
-//     }
-// }
-// let gunawan = new Mahasiswa('Gunawan', 10);
-// let zakiah = new Mahasiswa('Zakiah', 20);
+class Mahasiswa {
+    constructor(nama, energi) {
+        this.nama = nama;
+        this.energi = energi;
+    }
+    makan(porsi) {
+        this.energi += porsi;
+        return `Halo ${this.nama}, selamat makan!`;
+    }
+    main(jam) {
+        this.energi -= jam;
+        return `Halo ${this.nama}, selamat bermain!`;
+    }
+    tidur(jam) {
+        this.energi += jam * 2;
+        return `Halo ${this.nama}, selamat tidur!`;
+    }
+}
+let gunawan = new Mahasiswa('Gunawan', 10);
+let zakiah = new Mahasiswa('Zakiah', 20);
 
 //let angka = [];
 // let angka = new Array();
