@@ -13,3 +13,8 @@ var nama = 'Sandika'
 // nama var = undefined
 // nama function = fn()
 // hoisting
+// window = global object
+// this = window
+
+
+// execution phase
