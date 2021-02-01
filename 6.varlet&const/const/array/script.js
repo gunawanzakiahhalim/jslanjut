@@ -1,10 +1,10 @@
 const title = document.createElement('title');
-const titleText = document.createTextNode('Mhs');
+const titleText = document.createTextNode('Array');
 title.appendChild(titleText)
 document.head.appendChild(title);
 
 const judul = document.createElement('h1');
-const text = document.createTextNode('mhs Object');
+const text = document.createTextNode('Array');
 judul.appendChild(text);
 document.body.appendChild(judul);
 
