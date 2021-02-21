@@ -4,7 +4,7 @@ title.appendChild(titletxt)
 document.head.appendChild(title);
 
 const judul = document.createElement('h1');
-const txt = document.createTextNode('Menambil field pada object');
+const txt = document.createTextNode('Mengambil field pada object');
 judul.appendChild(txt);
 document.body.appendChild(judul);
 
