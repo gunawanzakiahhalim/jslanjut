@@ -4,7 +4,7 @@ title.appendChild(titletxt);
 document.head.appendChild(title);
 
 const judul = document.createElement('h1');
-const txt = document.createTextNode('for..of');
+const txt = document.createTextNode('Foreach Index');
 judul.appendChild(txt);
 document.body.appendChild(judul);
 
@@ -13,10 +13,10 @@ document.body.appendChild(judul);
 const mhs = ['Gunawan', 'Zakiah', 'Halim'];
 
 let cetak = '';
-for (const m of mhs) {
-  console.log(m);
-  cetak += m;
-}
+mhs.forEach((m, i) => {
+  console.log(`${m} adalah Mahasiswa ke-${i + 1}`);
+  cetak += `${m} adalah Mahasiswa ke-${i + 1}<br>`;
+});
 
 const section = document.createElement('section');
 section.innerHTML = cetak;
