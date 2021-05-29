@@ -18,8 +18,10 @@ const team = {
   ux: 'Ilya',
   devOps: 'Rara',
 };
-console.log(team);
-const cetak = team;
+
+const { pm, ...myTeam } = team;
+console.log(myTeam);
+const cetak = myTeam;
 
 const section = document.createElement('section');
 section.innerHTML = cetak;
