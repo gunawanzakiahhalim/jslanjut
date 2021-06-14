@@ -4,20 +4,18 @@ title.appendChild(titletxt);
 document.head.appendChild(title);
 
 const judul = document.createElement('h1');
-const txt = document.createTextNode('Filtering Boolean');
+const txt = document.createTextNode('Stack');
 judul.appendChild(txt);
 document.body.appendChild(judul);
 
-// Filtering
+// Stack
 
-function filterBy(type, ...values) {
-  return values.filter((v) => typeof v === type);
-}
+console.log('satu');
+console.log('dua');
+console.log('tiga');
 
-const filter = filterBy('boolean', 1, 2, 'Gunawan', false, 10, true, 'Zakiah');
 
-console.log(filter);
-const cetak = filter;
+const cetak = 'stack';
 
 const section = document.createElement('section');
 section.innerHTML = cetak;
