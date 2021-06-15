@@ -26,7 +26,7 @@ function tampilkanPesan(callback){
 }
 
 tampilkanPesan(nama => {
-  alert(`Halo, ${nama}`);
+    alert(`Halo, ${nama}`);
     const cetak = nama;
     const section = document.createElement('section');
     section.innerHTML = cetak;
