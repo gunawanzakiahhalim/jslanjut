@@ -1,10 +1,10 @@
-const title = document.createElement("title");
-const titletxt = document.createTextNode("Async Await");
+const title = document.createElement('title');
+const titletxt = document.createTextNode('Async Await');
 title.appendChild(titletxt);
 document.head.appendChild(title);
 
-const judul = document.createElement("h1");
-const txt = document.createTextNode("then catch");
+const judul = document.createElement('h1');
+const txt = document.createTextNode('then catch');
 judul.appendChild(txt);
 document.body.appendChild(judul);
 
@@ -13,27 +13,27 @@ function cobaPromise() {
     const waktu = 5000;
     if (waktu < 5000) {
       setTimeout(() => {
-        resolve("selesai");
+        resolve('selesai');
       }, waktu);
     } else {
-      reject("kelamaan!");
+      reject('kelamaan!');
     }
   });
 }
 
 const coba = cobaPromise();
 coba
-  .then(() => {
+  .then((coba) => {
     console.log(coba);
     const cetak = coba;
-    const section = document.createElement("section");
+    const section = document.createElement('section');
     section.innerHTML = cetak;
     document.body.appendChild(section);
   })
-  .catch(() => {
+  .catch((coba) => {
     console.log(coba);
     const cetak = coba;
-    const section = document.createElement("section");
+    const section = document.createElement('section');
     section.innerHTML = cetak;
     document.body.appendChild(section);
   });
