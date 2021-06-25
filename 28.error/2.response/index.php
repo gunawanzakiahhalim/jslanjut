@@ -19,7 +19,7 @@
     <div class="container">
       <div class="row mt-5">
         <div class="col">
-          <h1>WPU Movie DB</h1>
+            <h1>WPU Movie DB</h1>
         </div>
       </div>
 

@@ -1,8 +1,8 @@
 // fetch
-const searchButton = document.querySelector(".search-button");
-searchButton.addEventListener("click", async function () {
+const searchButton = document.querySelector('.search-button');
+searchButton.addEventListener('click', async function () {
   try {
-    const inputKeyword = document.querySelector(".input-keyword");
+    const inputKeyword = document.querySelector('.input-keyword');
     const movies = await getMovies(inputKeyword.value);
     //updateUI(movies);
   } catch (err) {
@@ -11,24 +11,27 @@ searchButton.addEventListener("click", async function () {
 });
 
 function getMovies(keyword) {
-  return fetch("htt://www.omdbapi.com/?apikey=6caddc47&s=" + keyword)
-    .then((response) => response.json())
+  return fetch('http://www.omdbapi.com/?apikey=6caddc47&s=' + keyword)
+    .then((response) => {
+      console.log(response);
+      //response.json()
+    })
     .then((response) => response.Search);
 }
 
 function updateUI(movies) {
-  let cards = "";
+  let cards = '';
   movies.forEach((m) => (cards += showCards(m)));
-  const movieContainer = document.querySelector(".movie-container");
+  const movieContainer = document.querySelector('.movie-container');
   movieContainer.innerHTML = cards;
 }
 
 // event binding
 // simpan event handler nya ke element document
-document.addEventListener("click", async function (e) {
+document.addEventListener('click', async function (e) {
   //console.log(e);
   //console.log(e.target);
-  if (e.target.classList.contains("modal-detail-button")) {
+  if (e.target.classList.contains('modal-detail-button')) {
     const imdbid = e.target.dataset.imdbid;
     const movieDetail = await getMovieDetail(imdbid);
     udpateUIDetail(movieDetail);
@@ -36,14 +39,14 @@ document.addEventListener("click", async function (e) {
 });
 
 function getMovieDetail(imdbid) {
-  return fetch("http://www.omdbapi.com/?apikey=6caddc47&i=" + imdbid)
+  return fetch('http://www.omdbapi.com/?apikey=6caddc47&i=' + imdbid)
     .then((response) => response.json())
     .then((m) => m);
 }
 
 function udpateUIDetail(m) {
   const movieDetail = showMovieDetail(m);
-  const modalBody = document.querySelector(".modal-body");
+  const modalBody = document.querySelector('.modal-body');
   modalBody.innerHTML = movieDetail;
 }
 
