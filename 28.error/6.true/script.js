@@ -4,7 +4,7 @@ searchButton.addEventListener("click", async function () {
   try {
     const inputKeyword = document.querySelector(".input-keyword");
     const movies = await getMovies(inputKeyword.value);
-    //updateUI(movies);
+    updateUI(movies);
   } catch (err) {
     console.log(err);
   }
@@ -13,10 +13,17 @@ searchButton.addEventListener("click", async function () {
 function getMovies(keyword) {
   return fetch("http://www.omdbapi.com/?apikey=6caddc47&s=" + keyword)
     .then((response) => {
-      console.log(response);
-      //response.json()
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response.json();
     })
-    .then((response) => response.Search);
+    .then((response) => {
+      if (response.Response === "False") {
+        throw new Error(response.Error);
+      }
+      return response.Search;
+    });
 }
 
 function updateUI(movies) {

@@ -13,8 +13,10 @@ searchButton.addEventListener("click", async function () {
 function getMovies(keyword) {
   return fetch("http://www.omdbapi.com/?apikey=6caddc47&s=" + keyword)
     .then((response) => {
-      console.log(response);
-      //response.json()
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response.json();
     })
     .then((response) => response.Search);
 }
